@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="7dp"
+
+    >
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/box_white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/nq_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@color/fr_gray"
+            android:padding="5dp"
+            android:text="2/20"
+            android:textColor="@color/mkWhite"
+            android:textSize="11sp"
+            android:layout_gravity="start|top"
+            />
+
+        <TextView
+            android:layout_margin="5dp"
+            android:id="@+id/nq_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
+            android:text="WordFromDatabase"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <ImageView
+
+            android:layout_margin="5dp"
+            android:id="@+id/nq_speak"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/timer"
+            android:padding="6dp"
+            android:src="@mipmap/podcast_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/box_white"
+        android:gravity="center|start"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout9"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout9"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+
+        <TextView
+
+            android:id="@+id/nq_first"
+            style="@style/Questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="FirstAnswerFromDB" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box"
+            android:text="A"
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_white"
+        android:gravity="center|start"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout10"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout10"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+
+
+        <TextView
+
+            android:id="@+id/nq_sec"
+            style="@style/Questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="SecoundAnswerFromDB" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box"
+            android:text="B"
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout13"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_white"
+        android:gravity="center|start"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout11"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout11"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+
+
+        <TextView
+
+            android:id="@+id/nq_third"
+            style="@style/Questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="ThirdAnswerFromDB" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box"
+            android:text="C"
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout14"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_white"
+        android:gravity="center|start"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout13"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout13"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
+
+        <TextView
+
+            android:id="@+id/nq_fourth"
+            style="@style/Questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="FourthAnswerFromDB" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box"
+            android:text="D"
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_white"
+        android:gravity="center|start"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout14"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout14"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
+
+        <TextView
+
+            android:id="@+id/nq_unknown"
+            style="@style/Questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="@string/i_don_t_know" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box_red"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

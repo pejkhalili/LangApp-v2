@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MediaSelection"
+    android:background="@mipmap/back">
+
+    <ImageView
+        android:id="@+id/ms_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ms_pod_key"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/podcast_key"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ms_all" />
+
+    <ImageView
+        android:id="@+id/ms_vid_key"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/video_key"
+        app:layout_constraintTop_toBottomOf="@+id/ms_pod_key"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <ImageView
+        android:id="@+id/ms_all"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="72dp"
+        android:src="@mipmap/allmedia_key"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ms_message" />
+
+    <TextView
+        android:id="@+id/ms_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/media_select"
+        android:textColor="@color/fr_gray"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ms_back" />
+
+
+</android.support.constraint.ConstraintLayout>

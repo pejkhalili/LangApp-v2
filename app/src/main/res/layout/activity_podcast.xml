@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/back"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:id="@+id/po_loading_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:indeterminateDrawable="@drawable/progress"
+            />
+        <TextView
+            android:id="@+id/po_loading_list_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="لطفا چند لحظه منتظر بمانید..."
+            android:layout_marginTop="15dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:id="@+id/po_side_menu"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/back_btn"/>
+        <TextView
+            android:id="@+id/po_title"
+            android:text="@string/podcasts_title"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textAlignment="viewEnd"
+            android:paddingEnd="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/po_sutitle"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_podcast_sutitle"
+        android:textStyle="bold"
+        android:background="@drawable/box"
+        android:textColor="@color/mkWhite"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:padding="5dp"/>
+    <ListView
+        android:id="@+id/pod_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        />
+    <LinearLayout
+        
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:orientation="vertical"
+        android:background="@drawable/box_red"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="00:00"
+                    android:textSize="10sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/mkWhite"/>
+                <TextView
+                    android:id="@+id/po_playing_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorAccent"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:id="@+id/SM_progress_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:textColor="@color/mkWhite"
+                    android:text="00:00"
+                    android:textSize="10sp"
+                    android:gravity="end"
+                    android:textAlignment="textEnd"
+                    android:layout_marginEnd="5dp"
+                    />
+
+            </LinearLayout>
+            <ProgressBar
+                android:id="@+id/po_underline_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:max="100"
+                android:progress="0"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/SM_prv"
+            android:background="@mipmap/dot"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            />
+        <ImageButton
+            android:layout_gravity="center"
+            android:paddingBottom="50dp"
+            android:id="@+id/SM_play"
+            android:background="@mipmap/play_key"
+            android:layout_width="50dp"
+            android:layout_height="60dp" />
+        <ImageButton
+            android:id="@+id/SM_next"
+            android:background="@mipmap/dot"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

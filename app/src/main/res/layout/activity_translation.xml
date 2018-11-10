@@ -1,0 +1,128 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/back"
+    tools:context=".activities.Translation">
+
+    <TextView
+        android:id="@+id/trns_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/translator"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/trns_backbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/trns_backbtn"
+        app:layout_constraintTop_toTopOf="@id/trns_backbtn" />
+
+    <ImageView
+        android:id="@+id/trns_backbtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <RadioGroup
+            android:id="@+id/trns_lang_select"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight=".1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trns_input">
+            <RadioButton
+                android:id="@+id/trns_fa_to_en"
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:layout_weight=".1"
+                android:buttonTint="@color/mkRed"
+                android:text="@string/fa_to_en" />
+            <RadioButton
+                android:id="@+id/trns_en_to_fa"
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:layout_weight=".1"
+                android:buttonTint="@color/mkRed"
+                android:checked="true"
+                android:text="@string/en_to_fa" />
+            <RadioButton
+                android:id="@+id/trns_en"
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:layout_weight=".1"
+                android:buttonTint="@color/mkRed"
+                android:checked="true"
+                android:text="@string/english" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/trns_input"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/box_white_less"
+            android:hint="@string/word_to_translate"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="0dp"
+            android:paddingStart="2dp"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/trns_trans_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="1dp"
+            android:layout_weight="0"
+            android:background="@drawable/box"
+            android:src="@drawable/ic_search"
+            android:text="@string/translate"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/trns_input"
+            tools:layout_editor_absoluteY="20dp" />
+
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/trns_trans_sec"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_margin="8dp"
+        android:text="secoTrnas"
+        android:textAlignment="viewStart"
+        android:textColor="@color/mkWhite"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trns_backbtn"/>
+
+</android.support.constraint.ConstraintLayout>

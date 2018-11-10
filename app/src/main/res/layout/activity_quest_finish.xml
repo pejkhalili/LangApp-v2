@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/back"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.chapdast.ventures.activities.QuestFinish">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="32dp"
+        android:layout_weight="0"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:src="@mipmap/finish_page"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fq_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="17dp"
+        android:text="@string/you_finished_today_s_quest_well_done"
+        android:textAlignment="center"
+        android:textColor="@color/fr_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+
+    <Button
+        android:id="@+id/fq_main_menu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box"
+        android:text="@string/Main_page"
+        android:textColor="@color/fr_yellow"
+        app:layout_constraintEnd_toEndOf="@+id/fq_reviews"
+        app:layout_constraintStart_toStartOf="@+id/fq_reviews"
+        app:layout_constraintTop_toBottomOf="@+id/fq_reviews" />
+
+    <Button
+        android:id="@+id/fq_reviews"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_white"
+        android:text="@string/wrongAnswersOneLine"
+        android:textColor="@color/fr_gray"
+        app:layout_constraintEnd_toEndOf="@+id/fq_text"
+        app:layout_constraintStart_toStartOf="@+id/fq_text"
+        app:layout_constraintTop_toBottomOf="@+id/fq_text" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="7dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rw_laytop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/box_white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/vw_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@color/fr_gray"
+            android:padding="5dp"
+            android:text="2/20"
+            android:textColor="@color/mkWhite"
+            android:textSize="11sp"
+            android:layout_gravity="start|top"
+            />
+
+        <TextView
+            android:layout_margin="5dp"
+            android:id="@+id/vw_word"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
+            android:text="WordFromDatabase"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <ImageView
+
+            android:layout_margin="5dp"
+            android:id="@+id/vw_speak"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/timer"
+            android:padding="6dp"
+            android:src="@mipmap/podcast_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vw_first_answer"
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/box_white"
+        android:gravity="center|start"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/rw_laytop"
+        app:layout_constraintStart_toStartOf="@+id/rw_laytop"
+        app:layout_constraintTop_toBottomOf="@+id/rw_laytop">
+
+        <TextView
+
+            android:id="@+id/vw_ans_st"
+            style="@style/Questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="FirstAnswerFromDB" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box"
+            android:text="A"
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vw_second_answer"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_white"
+        android:gravity="center|start"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/vw_first_answer"
+        app:layout_constraintStart_toStartOf="@+id/vw_first_answer"
+        app:layout_constraintTop_toBottomOf="@+id/vw_first_answer">
+
+
+        <TextView
+
+            android:id="@+id/vw_ans_nd"
+            style="@style/Questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="SecoundAnswerFromDB" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box"
+            android:text="B"
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vw_third_answer"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_white"
+        android:gravity="center|start"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/vw_second_answer"
+        app:layout_constraintStart_toStartOf="@+id/vw_second_answer"
+        app:layout_constraintTop_toBottomOf="@+id/vw_second_answer">
+
+
+        <TextView
+
+            android:id="@+id/vw_ans_rd"
+            style="@style/Questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="ThirdAnswerFromDB" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box"
+            android:text="C"
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vw_fourth_answer"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_white"
+        android:gravity="center|start"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/vw_third_answer"
+        app:layout_constraintStart_toStartOf="@+id/vw_third_answer"
+        app:layout_constraintTop_toBottomOf="@+id/vw_third_answer">
+
+        <TextView
+
+            android:id="@+id/vw_ans_th"
+            style="@style/Questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="FourthAnswerFromDB" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box"
+            android:text="D"
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vw_unknown"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_white"
+        android:gravity="center|start"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/vw_fourth_answer"
+        app:layout_constraintStart_toStartOf="@+id/vw_fourth_answer"
+        app:layout_constraintTop_toBottomOf="@+id/vw_fourth_answer">
+
+        <TextView
+
+            android:id="@+id/vw_ans_un"
+            style="@style/Questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="@string/i_don_t_know" />
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box_red"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,307 @@
+//noinspection GradleDependency
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'com.google.gms.google-services'
+
+configurations {
+    all {
+        exclude module: 'httpclient'
+        exclude module: 'json'
+        exclude group: 'org.apache.httpcomponents'
+    }
+
+}
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.chapdast.ventures"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 200
+        versionName "1.3"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+
+        playstore {
+            dimension "version"
+            versionCode 291
+            versionName "1.3-plst"
+        }
+
+        internal_test1 {
+            dimension "version"
+            versionCode 340
+            versionName "t1"
+        }
+
+        internal_test2 {
+            dimension "version"
+            versionCode 341
+            versionName "t2"
+        }
+        internal_test3 {
+            dimension "version"
+            versionCode 342
+            versionName "t3"
+        }
+        internal_test4 {
+            dimension "version"
+            versionCode 343
+            versionName "t4"
+        }
+
+
+
+/*
+        chapdast1 {
+            dimension "version"
+            versionCode 292
+            versionName "1.3.c1"
+        }
+        chapdast2 {
+            dimension "version"
+            versionCode 293
+            versionName "1.3.c2"
+        }
+        chapdast3 {
+            dimension "version"
+            versionCode 294
+            versionName "1.3.c3"
+        }
+        chapdast4 {
+            dimension "version"
+            versionCode 295
+            versionName "1.3.c4"
+        }
+        chapdast5 {
+            dimension "version"
+            versionCode 296
+            versionName "1.3.c5"
+        }
+        chapdast6 {
+            dimension "version"
+            versionCode 297
+            versionName "1.3.c6"
+        }
+        chapdast7 {
+            dimension "version"
+            versionCode 298
+            versionName "1.3.c7"
+        }
+        chapdast8 {
+            dimension "version"
+            versionCode 299
+            versionName "1.3.c8"
+        }
+        chapdast9 {
+            dimension "version"
+            versionCode 300
+            versionName "1.3.c9"
+        }
+        chapdast10 {
+            dimension "version"
+            versionCode 301
+            versionName "1.3.c0"
+        }
+        namazh1 {
+            dimension "version"
+            versionCode 302
+            versionName "1.3.n1"
+        }
+        namazh2 {
+            dimension "version"
+            versionCode 303
+            versionName "1.3.n2"
+        }
+        namazh3 {
+            dimension "version"
+            versionCode 304
+            versionName "1.3.n3"
+        }
+        namazh4 {
+            dimension "version"
+            versionCode 305
+            versionName "1.3.n4"
+        }
+        namazh5 {
+            dimension "version"
+            versionCode 306
+            versionName "1.3.n5"
+        }
+        namazh6 {
+            dimension "version"
+            versionCode 307
+            versionName "1.3.n6"
+        }
+        namazh7 {
+            dimension "version"
+            versionCode 308
+            versionName "1.3.n7"
+        }
+        namazh8 {
+            dimension "version"
+            versionCode 309
+            versionName "1.3.n8"
+        }
+        namazh9 {
+            dimension "version"
+            versionCode 310
+            versionName "1.3.n9"
+        }
+        namazh10 {
+            dimension "version"
+            versionCode 311
+            versionName "1.3.n10"
+        }
+        namazh11 {
+            dimension "version"
+            versionCode 312
+            versionName "1.3.n11"
+        }
+        namazh12 {
+            dimension "version"
+            versionCode 313
+            versionName "1.3.n12"
+        }
+        namazh13 {
+            dimension "version"
+            versionCode 314
+            versionName "1.3.n13"
+        }
+        namazh14 {
+            dimension "version"
+            versionCode 315
+            versionName "1.3.n14"
+        }
+        namazh15 {
+            dimension "version"
+            versionCode 316
+            versionName "1.3.n15"
+        }
+
+        wide1 {
+            dimension "version"
+            versionCode 317
+            versionName "1.3.wi1"
+        }
+        wide2 {
+            dimension "version"
+            versionCode 318
+            versionName "1.3.wi2"
+        }
+        wide3 {
+            dimension "version"
+            versionCode 319
+            versionName "1.3.wi3"
+        }
+        wide4 {
+            dimension "version"
+            versionCode 320
+            versionName "1.3.wi4"
+        }
+        wide5 {
+            dimension "version"
+            versionCode 321
+            versionName "1.3.wi5"
+        }
+        wonders1 {
+            dimension "version"
+            versionCode 322
+            versionName "1.3.w1"
+        }
+        wonders2 {
+            dimension "version"
+            versionCode 323
+            versionName "1.3.w2"
+        }
+        wonders3 {
+            dimension "version"
+            versionCode 324
+            versionName "1.3.w3"
+        }
+        wonders4 {
+            dimension "version"
+            versionCode 325
+            versionName "1.3.w4"
+        }
+        wonders5 {
+            dimension "version"
+            versionCode 326
+            versionName "1.3.w5"
+        }
+        wonders6 {
+            dimension "version"
+            versionCode 327
+            versionName "1.3.w6"
+        }
+        wonders7 {
+            dimension "version"
+            versionCode 328
+            versionName "1.3.w7"
+        }
+        wonders8 {
+            dimension "version"
+            versionCode 329
+            versionName "1.3.w8"
+        }
+        wonders9 {
+            dimension "version"
+            versionCode 330
+            versionName "1.3.w9"
+        }
+        wonders10 {
+            dimension "version"
+            versionCode 331
+            versionName "1.3.w0"
+        }
+*/
+    }
+    flavorDimensions "version"
+
+}
+
+dependencies {
+    //Pushe.co
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:26.1.0'
+
+    implementation 'co.ronash.android:pushe-base:1.4.0'
+    implementation 'com.google.android.gms:play-services-gcm:16.0.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    //http Controller
+    implementation 'khttp:khttp:0.1.0'
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //noinspection GradleDynamicVersion
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation ':inAppPurchase@aar'
+    implementation ':inAppSDK@aar'
+
+    //noinspection GradleDynamicVersion
+//    implementation 'ir.sls.mono:Monolytics:+'
+
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+
+}

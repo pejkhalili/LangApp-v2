@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="15dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/nq_pus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:src="@mipmap/timer_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nq_time"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="00:20"
+        android:textAlignment="center"
+        android:textColor="@color/fr_gray"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/nq_pus"
+        app:layout_constraintEnd_toEndOf="@+id/nq_pus"
+        app:layout_constraintStart_toStartOf="@+id/nq_pus"
+        app:layout_constraintTop_toTopOf="@+id/nq_pus"
+        app:layout_constraintVertical_bias="0.49" />
+
+    <LinearLayout
+        android:id="@+id/nq_wrong_lay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toEndOf="@+id/nq_pus"
+        app:layout_constraintBottom_toBottomOf="@+id/nq_pus">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@mipmap/wrong_key" />
+
+        <TextView
+            android:id="@+id/nq_wrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textStyle="bold"
+            android:textColor="@color/fr_gray" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="1dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/nq_wrong_lay"
+        app:layout_constraintStart_toEndOf="@id/nq_wrong_lay">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@mipmap/right_key" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/nq_trues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:textColor="@color/fr_gray" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

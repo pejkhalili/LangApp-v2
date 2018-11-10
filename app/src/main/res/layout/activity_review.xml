@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chapdast.ventures.activities.Review"
+    android:background="@mipmap/back"
+    >
+    <LinearLayout
+        android:id="@+id/rv_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+
+            android:id="@+id/rv_side_menu"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:src="@mipmap/back_btn" />
+
+        <TextView
+            android:id="@+id/rv_quest_num"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quest #"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/rv_timer_inc"
+        layout="@layout/vw_timer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+
+        android:id="@+id/rv_questLoader"
+        layout="@layout/review_loader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_timer_inc" />
+</android.support.constraint.ConstraintLayout>

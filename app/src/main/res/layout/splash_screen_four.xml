@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="56dp"
+        android:src="@mipmap/sp_four"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sp_four_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/we_sent_you_activition_code_enter_it_below"
+        android:textAlignment="center"
+        android:textColor="@color/fr_gray"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_four_text">
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:text="HG-"
+            android:textColor="@color/fr_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+
+            />
+
+        <EditText
+            android:id="@+id/sp_four_confirm_box"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/box"
+            android:hint="@string/verfy_code_pat"
+            android:inputType="number"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:text="HG-"
+            android:textSize="20sp"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sp_four_confirm"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="2dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_white"
+        android:text="@string/confirm"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/sp_four_change_number"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/box"
+            android:text="@string/changeNumber"
+            android:textColor="@color/mkWhite"
+            android:textSize="20sp" />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sp_four_timerHolder"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:layoutDirection="rtl"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/sp_four_confirm"
+        tools:layout_editor_absoluteX="0dp">
+
+
+        <TextView
+            android:id="@+id/sp_four_until_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="تا " />
+
+        <TextView
+            android:id="@+id/sp_four_codeTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="05:00" />
+
+        <TextView
+            android:id="@+id/sp_four_willSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text=" دیگه کد برات ارسال میشه" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sp_four_requestNowCode"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/box_red"
+        android:text="@string/requestNewCode"
+        android:textColor="@color/mkWhite"
+        android:textSize="17sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/sp_four_confirm"
+        app:layout_constraintStart_toStartOf="@+id/sp_four_confirm"
+        app:layout_constraintTop_toBottomOf="@+id/sp_four_timerHolder" />
+</android.support.constraint.ConstraintLayout>

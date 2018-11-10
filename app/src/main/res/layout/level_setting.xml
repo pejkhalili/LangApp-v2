@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialogs_back"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="30dp"
+    android:paddingTop="50dp"
+    android:theme="@style/AlertDialog.AppCompat">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/ls_count_challenge"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/box"
+            android:inputType="number"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textColorHint="@color/mkDark" />
+
+        <TextView
+            android:id="@+id/ls_tv_quest_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="@string/number_of_question_on_each_quest"
+            android:textAlignment="textStart"
+            android:textColor="@color/mkDark"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <EditText
+
+            android:id="@+id/ls_time_for_challenge"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/box"
+            android:inputType="number"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/mkWhite"
+            android:textColorHint="@color/mkDark" />
+
+        <TextView
+            android:id="@+id/ls_tv_time_limit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/desirable_time_for_each_question"
+            android:textAlignment="textStart"
+            android:textColor="@color/mkDark"
+            android:layout_weight="1"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <android.support.v7.widget.SwitchCompat
+            android:background="@drawable/box"
+            android:padding="5dp"
+            android:id="@+id/ls_speakSwh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"/>
+
+        <TextView
+            android:id="@+id/ls_speakTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/speak_words"
+            android:textAlignment="textStart"
+            android:textColor="@color/mkDark"
+            android:layout_weight="1"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/ls_okBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/box_white"
+            android:text="@string/Set"
+            android:textColor="@color/mkDark"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

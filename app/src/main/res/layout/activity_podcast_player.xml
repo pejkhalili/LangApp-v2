@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PodcastPlayer"
+    android:background="@mipmap/back_lg">
+
+    <ImageView
+
+        android:id="@+id/ppBackBtn"
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ppThumb"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:src="@mipmap/icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ppBackBtn" />
+
+    <ImageView
+        android:id="@+id/ppPlayBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:src="@mipmap/pod_pause"
+        app:layout_constraintBottom_toTopOf="@+id/ppProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ppBackward"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/pod_backward"
+        app:layout_constraintBottom_toBottomOf="@+id/ppPlayBtn"
+        app:layout_constraintEnd_toStartOf="@+id/ppPlayBtn"
+        app:layout_constraintTop_toTopOf="@+id/ppPlayBtn" />
+
+    <ImageView
+        android:id="@+id/ppForward"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/pod_forward"
+        app:layout_constraintBottom_toBottomOf="@+id/ppPlayBtn"
+        app:layout_constraintStart_toEndOf="@+id/ppPlayBtn"
+        app:layout_constraintTop_toTopOf="@+id/ppPlayBtn" />
+
+    <ProgressBar
+        android:id="@+id/ppProgress"
+        style="@style/PodPlayProgress"
+        android:layout_width="0dp"
+        android:layout_height="14dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:max="100"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:progress="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ppFullTime"
+        app:layout_constraintStart_toEndOf="@+id/ppElapsedTime" />
+
+    <TextView
+        android:id="@+id/ppFullTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="00:00"
+        android:textColor="@color/mkWhite"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ppProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ppProgress" />
+
+    <TextView
+        android:id="@+id/ppElapsedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="00:00"
+        android:textColor="@color/mkWhite"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ppProgress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ppProgress" />
+
+    <TextView
+        android:id="@+id/ppMediaName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ppThumb" />
+
+    <TextView
+        android:id="@+id/ppMedicLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/ppMediaName"
+        app:layout_constraintStart_toStartOf="@+id/ppMediaName"
+        app:layout_constraintTop_toBottomOf="@+id/ppMediaName" />
+</android.support.constraint.ConstraintLayout>

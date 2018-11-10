@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.chapdast.ventures">
+
+    <uses-sdk tools:overrideLibrary="co.ronash.pushe" />
+
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.chapdast.ventures.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.chapdast.ventures.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Optional permissions -->
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
+    <application
+        android:name=".HelloApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data
+                    android:path="com.chapdast.ventures"
+                    android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.chapdast.ventures" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="co.ronash.pushe.token"
+            android:value="PUSHE_742028393625" />
+        <meta-data
+            android:name="co.ronash.pushe.cr"
+            android:value="Tm9uZQ==" />
+
+        <activity
+            android:name=".activities.SplashPage"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode = "stateHidden"
+            />
+        <activity
+            android:name=".activities.UpSplash"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.Hub"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Quest"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.NoConnection"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.QuestFinish"
+            android:label="@string/title_activity_quest_finish"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activities.Review"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Player"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activities.Profile"
+            android:label="@string/title_activity_profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <receiver
+            android:name=".Handlers.SmsListener"
+            android:enabled="true">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="mk.mk.mk" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".activities.MediaLoader"
+            android:label="@string/title_activity_media_loader"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activities.PodcastPlayer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.MediaSelection"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.EULA_Activity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.MediaCategories" />
+        <activity android:name=".activities.Translation" />
+        <activity android:name=".Handlers.NoConnectionDialog" />
+        <activity
+            android:name=".activities.Support"
+            android:label="@string/title_activity_support"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activities.Welcome" />
+    </application>
+
+</manifest>

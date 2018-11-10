@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">Hellogram</string>
+    <string name="num_pat">مانند09123456789 </string>
+    <string name="please_enter_your_number">شماره موبایل خودت رو وارد کن</string>
+    <string name="we_sent_you_activition_code_enter_it_below">کد تایید الان برات ارسال میشه</string>
+    <string name="verfy_code_pat">_ _ _ _</string>
+    <string name="select_your_level">سطح مورد نظر خود را انتخاب نمایید</string>
+    <string name="elementary_level">سطح مبتدی</string>
+    <string name="intermediate_level">سطح متوسط</string>
+    <string name="advanced_level">سطح پیشرفته</string>
+    <string name="_504_essential_words">504 ESSENTIAL WORDS</string>
+    <string name="_1001_tofel_vocab">1001 TOFEL Vocab</string>
+    <string name="i_don_t_know">نمی دانم</string>
+    <string name="change_level">تغییر سطح</string>
+    <string name="right_answers">پاسخ های صحیح:</string>
+    <string name="wrong_answers">پاسخ های اشتباه</string>
+    <string name="number_of_question_on_each_quest">تعداد سوالات در هر روز</string>
+    <string name="desirable_time_for_each_question">زمان پاسخگویی به هر سوال</string>
+    <string name="choose_your_desire_video_to_watch">ویدیو مورد نظر را انتخاب کنید</string>
+    <string name="videos">ویدیو ها</string>
+    <string name="title_activity_quest_finish">QuestFinish</string>
+    <string name="sp_two_intro">اپلیکیشن هلوگرام با استفاده از  متد جعبه لایتنر به شما کمک میکنه تا با سادگی زبان انگلیسی رو یاد بگیرید و برای همیشه به خاطر بسپارید</string>
+    <string name="finished_quest">آزمون امروز را انجام داده اید.</string>
+    <string name="next_question">سوال بعد</string>
+    <string name="maxNums">بیشترین تعداد سوال در هر روز ۴۰ سوال و بیشترین زمان ۶۰ ثانیه است</string>
+    <string name="Set">ثبت</string>
+    <string name="regSMS"> کد عضویت شما اپ هلوگرام</string>
+    <string name="regSMSEnd"> میباشد.</string>
+
+
+    <string name="translate">ترجمه کن</string>
+    <string name="translateInputError">لطفا واژه ای وارد کنید</string>
+    <string name="en_to_fa">ترجمه انگلیسی به فارسی</string>
+    <string name="fa_to_en">ترجمه فارسی به انگلیسی</string>
+    <string name="english">تر جمه انگلیسی به انگلیسی</string>
+    <string name="no_server_connection">ارتباط با سرور برقرار نمی باشد</string>
+    <string name="try_again">تلاش مجدد</string>
+    <string name="checkConnection">در حال بررسی اتصال به سرور</string>
+    <string name="exit">برای خروج بازگشت را مجدد لمس کنید</string>
+    <string name="no_reviews">در حال حاضر سوالی برای مرور وجود ندارد</string>
+    <string name="podcasts_title">پادکست ها</string>
+    <string name="select_podcast_sutitle">پادکست مورد نظر خور را انتخاب کنید</string>
+    <string name="eula">شرایط استفاده</string>
+    <string name="unSub">لغو اشتراک</string>
+    <string name="about">درباره ما</string>
+    <string name="confirm">تایید</string>
+    <string name="unsub_r_u_sure">آیا از لغو اشتراک خود اطمینان دارید؟</string>
+    <string name="yes">بله</string>
+    <string name="no">خیر</string>
+    <string name="unSubSucces">حساب شما با موفقیت لغو شد</string>
+    <string name="wronganswers">مرور پاسخ های\nنادرست</string>
+    <string name="wrongAnswersOneLine">مرور پاسخ های نادرست</string>
+    <string name="selectlevel">انتخاب سطح</string>
+    <string name="userstatus">وضعیت</string>
+    <string name="onlinedic">دیکشنری آنلاین</string>
+    <string name="mediapage">چند رسانه ای ها</string>
+    <string name="levelsetting">تنظیمات آزمون</string>
+    <string name="word_to_translate">‌Word to Translate...</string>
+    <string name="selectPodcast">لطفا یک پادکست را انتخاب کنید</string>
+    <string name="title_activity_home">activity_home</string>
+    <string name="wrongNum">لطفا شماره موبایل را به درستی وارد کنید</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_dummy2">DUMMY2</string>
+    <string name="noQuestAvalable">آزمون های این سطح را انجام داده اید.\nلطفا مرور پاسخ های نادرست و یا سطح جدیدی را انتخاب نمایید</string>
+    <string name="noReviewAvalable">سوالی برای مرور وجود ندارد. \n بعد از آزمون برای مرور پاسخ های نادرست خود از این گزینه استفاده کنید</string>
+    <string name="user_stat_empty">برای مشاهده وضعیت باید حداقل\nیکبار آزمون را انجام داده باشید</string>
+    <string name="stopped">مکث</string>
+    <string name="started">شروع</string>
+    <string name="Main_page">صفحه اصلی</string>
+    <string name="you_finished_today_s_quest_well_done">شما آزمون امروز را به اتمام رسانیده اید.</string>
+
+    <string name="more_info">توضیحات بیشتر</string>
+    <string name="sp_three_price">روزانه ۵۰۰ تومان برای همراه اولی ها\n۴۸ ساعت رایگان برای ایرانسلی ها</string>
+    <string name="unSupportedNumber">در حال حاضر فقط دارندگان سیم کارت های همراه اول و یا ایرانسل امکان عضویت را دارند</string>
+    <string name="title_activity_profile">حساب کاربری</string>
+    <string name="uInfoName">نام</string>
+    <string name="uInfoUsername">نام کاربری</string>
+    <string name="uAccount">حساب کاربری</string>
+    <string name="unSet">تعیین نشده</string>
+    <string name="changeNumber">تغییر شماره</string>
+    <string name="code_not_match">کد وارد شده صحیح نمی باشد</string>
+    <string name="title_activity_media_loader">MediaLoader</string>
+    <string name="mediasTitle">رسانه های آموزشی</string>
+
+    <string name="pleaseWait">لطفا منتظر بمانید...</string>
+    <string name="selectFilter">دسته بندی</string>
+    <string name="enterYourName">نام خود را وارد کنید</string>
+    <string name="timeRemainToNextQuest">زمان باقی مانده تا آزمون بعدی</string>
+    <string name="setAnswerWait">در حال ثبت پاسخ لطفا منتظر باشید</string>
+    <string name="pleaseTryAgain">لطفا مجدد تلاش فرمایید</string>
+    <string name="name_has_set">نام با موفقیت تنظیم شد</string>
+    <string name="cantConnectToServer">عدم ارتباط با سرور\nلطفا مجدد تلاش فرمایید</string>
+    <string name="media_select">دسته بندی مورد نظر را انتخاب کنید</string>
+    <string name="media_all">همه</string>
+    <string name="back">بازگشت</string>
+    <string name="speak_words">خواندن کلمات</string>
+    <string name="translator">مترجم</string>
+    <string name="noTranslationFound_fa">ترجمه ای پیدا نشد</string>
+    <string name="noTranslationFound_en">No Translation</string>
+    <string name="support">پشتیبانی</string>
+
+    <string-array name="mediaTypes">
+        <item>همه</item>
+        <item>ویدئو</item>
+        <item>پادکست</item>
+    </string-array>
+    <string name="title_activity_support">Support</string>
+    <string name="support_tel">شماره تماس:</string>
+    <string name="support_call_btn">تماس</string>
+    <string name="email_send_title">ارسال ایمیل به پشتیبانی هلوگرام</string>
+    <string name="supp_email_subject">پشتیبانی هلوگرام - کاربر</string>
+    <string name="unsubIrancel">مشترک گرامی، با خروج از اپلیکیشن دسترسی شما به هلوگرام بسته و اشتراک شما در سرویس لغو خواهد شد.</string>
+    <string name="unsubMci">مشترک گرامی، خروج از اپلیکیشن به منزله لغو عضویت شما از سرویس «هلوگرام» نیست و صرفا دسترسی شما به محتوای برنامه بسته خواهد شد.</string>
+    <string name="wlc_next">بعدی</string>
+    <string name="wlc_start">شروع</string>
+    <string name="wlc_skip">قبلی</string>
+    <string name="pleaseWaitLoginPage">لطفا منتظر بمانید</string>
+    <string name="requestNewCode">کد نیومد؟</string>
+    <string name="turnOffVpn">لطفا فیلتر شکن خود را خاموش کرده . مجدد تلاش فرمایید</string>
+    <string name="startApp">ورود به اپلیکیشن</string>
+</resources>

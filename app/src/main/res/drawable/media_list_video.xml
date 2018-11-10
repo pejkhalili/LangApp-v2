@@ -1,0 +1,21 @@
+<layer-list xmlns:android = "http://schemas.android.com/apk/res/android">
+<item>
+
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <solid android:color="@color/fr_yellow"/>
+        <corners
+            android:topLeftRadius="2dp"
+            android:topRightRadius="2dp"
+            />
+    </shape>
+
+</item>
+<item>
+    <bitmap
+        android:src= "@mipmap/video_icon"
+        android:gravity="center"
+        >
+
+    </bitmap>
+</item>
+</layer-list>

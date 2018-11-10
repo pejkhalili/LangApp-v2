@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hub_hub"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/back"
+    android:orientation="horizontal"
+    tools:context="com.chapdast.ventures.activities.Hub">
+
+
+
+
+        <ImageView
+            android:id="@+id/hub_side_menu"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:src="@mipmap/side_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/hub_start"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@mipmap/quest_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hub_start">
+
+        <GridLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="3"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <Button
+                    android:id="@+id/hub_level_select"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:background="@mipmap/level_selection" />
+
+                <TextView
+                    android:id="@+id/HUB_lvlSet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selectlevel"
+                    android:textAlignment="center"
+                    android:textColor="@color/mkDark"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <Button
+                    android:id="@+id/hub_wrongs"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+
+                    android:background="@mipmap/repeat_wrong_quest" />
+
+                <TextView
+
+                    android:id="@+id/HUB_wrongAns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wronganswers"
+                    android:textAlignment="center"
+                    android:textColor="@color/mkDark"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <Button
+                    android:id="@+id/hub_status"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+
+                    android:background="@mipmap/status" />
+
+                <TextView
+                    android:id="@+id/HUB_userStat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/userstatus"
+                    android:textAlignment="center"
+                    android:textColor="@color/mkDark"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <Button
+                    android:id="@+id/hub_online_dic"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@mipmap/online_dictionary" />
+
+                <TextView
+                    android:id="@+id/HUB_OnlineDic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/onlinedic"
+                    android:textAlignment="center"
+                    android:textColor="@color/mkDark"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <Button
+                    android:id="@+id/hub_videos"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@mipmap/videos" />
+
+                <TextView
+                    android:id="@+id/HUB_Media"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mediapage"
+                    android:textAlignment="center"
+                    android:textColor="@color/mkDark"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <Button
+                    android:id="@+id/hub_level_setting"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@mipmap/level_selection_setting" />
+
+                <TextView
+                    android:id="@+id/HUB_Level_Setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/levelsetting"
+                    android:textAlignment="center"
+                    android:textColor="@color/mkDark"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </GridLayout>
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/box"
+            android:padding="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/hub_current_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CURRENT_LEVEL"
+                android:textColor="@color/mkWhite" />
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/hub_api"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/box_white"
+        android:paddingBottom="5dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="5dp"
+        android:textAlignment="center"
+        android:textColor="@color/mkBlack"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout4" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
