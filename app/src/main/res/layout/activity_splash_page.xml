@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/back"
+    android:background="@color/frBlue"
     tools:context="com.chapdast.ventures.activities.SplashPage"
     android:id="@+id/splash_layout">
 

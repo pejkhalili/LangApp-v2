@@ -43,24 +43,19 @@ android {
 
         internal_test1 {
             dimension "version"
-            versionCode 340
-            versionName "t1"
+            versionCode 378
+            versionName "t3"
         }
 
         internal_test2 {
             dimension "version"
-            versionCode 341
-            versionName "t2"
+            versionCode 379
+            versionName "t3"
         }
         internal_test3 {
             dimension "version"
-            versionCode 342
+            versionCode 380
             versionName "t3"
-        }
-        internal_test4 {
-            dimension "version"
-            versionCode 343
-            versionName "t4"
         }
 
 

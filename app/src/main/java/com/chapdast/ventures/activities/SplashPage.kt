@@ -76,6 +76,7 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
             sp_three_num_box.typeface = HelloApp.IRANSANS
             sp_three_num_box.setSelection(2)
             sp_three_price.typeface = HelloApp.IRANSANS
+            newText.typeface = HelloApp.IRANSANS
 
             sp_four_confirm_box.typeface = HelloApp.IRANSANS
             sp_four_until_text.typeface = HelloApp.IRANSANS
@@ -98,11 +99,13 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
             sp_three_num_box.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
                 if (keyCode == KeyEvent.KEYCODE_ENTER || keyCode == KeyEvent.ACTION_DOWN || keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
 //                    splash3()
+
                     val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                     imm.hideSoftInputFromWindow(sp_three_num_box.windowToken, 0)
                     return@OnKeyListener true
                 }
                 false
+
             })
 
             sp_four_confirm_box.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
@@ -307,7 +310,7 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
     fun setConfirmNumberKey(wait: Boolean = true) {
         if (wait == true) {
             sp_three_confirm.isEnabled = true
-            sp_three_confirm.text = applicationContext.getString(R.string.confirm)
+            sp_three_confirm.text = applicationContext.getString(R.string.sendNumber)
         } else {
             sp_three_confirm.isEnabled = false
             sp_three_confirm.text = getString(R.string.pleaseWaitLoginPage)
@@ -481,8 +484,6 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
     }
 
     override fun onBackPressed() {
-
-
         if (first_time) {
             finish()
             finishAffinity()

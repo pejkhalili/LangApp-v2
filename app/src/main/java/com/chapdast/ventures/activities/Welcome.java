@@ -162,7 +162,7 @@ public class Welcome extends ChapActivity {
             addBottomDots(position);
             Ana ana = new Ana(getApplicationContext());
             ana.splash(position);
-            // changing the next button text 'NEXT' / 'GOT IT'
+//             changing the next button text 'NEXT' / 'GOT IT'
             if (position == layouts.length - 1) {
                 // last page. make button text to GOT IT
 //                btnNext.setText(getString(R.string.wlc_start));
@@ -173,7 +173,7 @@ public class Welcome extends ChapActivity {
                 start.setVisibility(View.GONE);
                 startApp.setVisibility(View.INVISIBLE);
                 if (position == 0) {
-                    startApp.setVisibility(View.GONE);
+                    startApp.setVisibility(View.VISIBLE);
                     start.setVisibility(View.VISIBLE);
                     btnNext.setVisibility(View.INVISIBLE);
                     btnSkip.setVisibility(View.INVISIBLE);

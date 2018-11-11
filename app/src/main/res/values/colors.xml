@@ -17,6 +17,8 @@
     <color name="fr_gray">#414042</color>
     <color name="fr_yellow">#fccd12</color>
     <color name="frOrange">#f15a29</color>
+    <color name="frBlue">#21409A</color>
+    <color name="frRed">#be1e2d</color>
 
     <color name="ELM">#00d4ff</color>
     <color name="INT">#001aff</color>

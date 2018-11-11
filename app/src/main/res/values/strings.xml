@@ -73,7 +73,7 @@
     <string name="you_finished_today_s_quest_well_done">شما آزمون امروز را به اتمام رسانیده اید.</string>
 
     <string name="more_info">توضیحات بیشتر</string>
-    <string name="sp_three_price">روزانه ۵۰۰ تومان برای همراه اولی ها\n۴۸ ساعت رایگان برای ایرانسلی ها</string>
+    <string name="sp_three_price">روزانه ۵۰۰ تومان برای همراه اولی ها</string>
     <string name="unSupportedNumber">در حال حاضر فقط دارندگان سیم کارت های همراه اول و یا ایرانسل امکان عضویت را دارند</string>
     <string name="title_activity_profile">حساب کاربری</string>
     <string name="uInfoName">نام</string>
@@ -121,4 +121,5 @@
     <string name="requestNewCode">کد نیومد؟</string>
     <string name="turnOffVpn">لطفا فیلتر شکن خود را خاموش کرده . مجدد تلاش فرمایید</string>
     <string name="startApp">ورود به اپلیکیشن</string>
+    <string name="sendNumber">ارسال شماره</string>
 </resources>
