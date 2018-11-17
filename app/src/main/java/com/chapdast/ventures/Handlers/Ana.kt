@@ -13,9 +13,9 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.util.Log
 import com.chapdast.ventures.Configs.ANA_SERVER
-import com.chapdast.ventures.Configs.FIREBASE_CLI
+//import com.chapdast.ventures.Configs.FIREBASE_CLI
 import com.chapdast.ventures.Configs.SPref
-import com.google.firebase.analytics.FirebaseAnalytics
+//import com.google.firebase.analytics.FirebaseAnalytics
 
 //import ir.mono.monolyticsdk.Monolyitcs
 
@@ -30,8 +30,6 @@ class Ana(context: Context) : Activity() {
 
     var pm = con.packageManager.getPackageInfo(con.applicationInfo.packageName.toString(), 0)
     var ver: String = "${pm.versionName}/${pm.versionCode}"
-
-    //    var imei  = SPref(con,"ana")!!.getString("imei","NotAllowed")
     var tm = con.applicationContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
     val perm = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         con.checkSelfPermission("android.permission.READ_PHONE_STATE")
@@ -42,7 +40,7 @@ class Ana(context: Context) : Activity() {
 
     @SuppressLint("MissingPermission", "HardwareIds")
     var imei = if (perm == PackageManager.PERMISSION_GRANTED) tm.deviceId else "not_allowed"
-//    var imei = tm.allCellInfo.toString()
+
 
     fun sub(phone:String) {
         var userId: String = phone
@@ -91,7 +89,10 @@ class Ana(context: Context) : Activity() {
         var userId = phone
         SendApiRequest(mapOf<String, String>("event" to "requestCode", "imei" to imei.toString(), "ver" to ver, "phone" to userId))
     }
-
+    fun InAppSubRequest(phone: String){
+        var userId = phone
+        SendApiRequest(mapOf<String, String>("event" to "inAppReq", "imei" to imei.toString(), "ver" to ver, "phone" to userId))
+    }
 
     fun wrongNumber(phone: String) {
         var userId = phone
@@ -127,15 +128,15 @@ class Ana(context: Context) : Activity() {
         override fun doInBackground(vararg params: String?): Boolean {
             var event: String? = data.get("event")
 
-            if (FIREBASE_CLI != null) {
-                var bundle: Bundle = Bundle()
-                bundle.putString("userId", userId)
-                bundle.putString("version", ver)
-                bundle.putString("deviceId", imei)
-                bundle.putString("event", event)
-                FIREBASE_CLI!!.logEvent(event!!, bundle)
-                Log.i("FRIEBASE","$event on FB Called!")
-            }
+//            if (FIREBASE_CLI != null) {
+//                var bundle: Bundle = Bundle()
+//                bundle.putString("userId", userId)
+//                bundle.putString("version", ver)
+//                bundle.putString("deviceId", imei)
+//                bundle.putString("event", event)
+//                FIREBASE_CLI!!.logEvent(event!!, bundle)
+//                Log.i("FRIEBASE","$event on FB Called!")
+//            }
 
             var sendReq = khttp.post(ANA_SERVER, data = data)
             if (sendReq.statusCode == 200) {

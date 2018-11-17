@@ -1,27 +1,22 @@
 package com.chapdast.ventures.activities
 
 
-import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.AsyncTask
-import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
-import android.support.annotation.RequiresApi
-import android.support.v4.app.ActivityCompat
-import android.telephony.TelephonyManager
 import android.util.Log
 import co.ronash.pushe.Pushe
-import com.chapdast.ventures.*
-import com.chapdast.ventures.Configs.*
+import com.chapdast.ventures.ChapActivity
+//import com.chapdast.ventures.Configs.FIREBASE_CLI
+import com.chapdast.ventures.Configs.SERVER_ADDRESS
+import com.chapdast.ventures.Configs.SPref
 import com.chapdast.ventures.Handlers.Ana
-import com.chapdast.ventures.Handlers.NoConnectionDialog
-import com.google.firebase.analytics.FirebaseAnalytics
+import com.chapdast.ventures.R
+//import com.google.firebase.analytics.FirebaseAnalytics
 
-//import ir.mono.monolyticsdk.Monolyitcs
+
 
 /**
  * Created by pejman on 6/1/18.
@@ -35,7 +30,7 @@ class UpSplash : ChapActivity() {
 
             setContentView(R.layout.activity_up_splash)
 
-            FIREBASE_CLI = FirebaseAnalytics.getInstance(applicationContext)
+//            FIREBASE_CLI = FirebaseAnalytics.getInstance(applicationContext)
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
             StrictMode.setThreadPolicy(policy)
             var ana = Ana(applicationContext)
@@ -43,23 +38,18 @@ class UpSplash : ChapActivity() {
 
             Pushe.initialize(applicationContext, false)
 
-
             val userId = SPref(this, "userCreds")?.getString("userId", null)
-
             Log.d("USTT", "UserId: " + userId)
 
             var userCheck = UserCheck(userId.toString(), this).execute()
 
             Log.d("USTT", userCheck.get().toString())
 
-            if (userId != null && userCheck.get().toString() == "0") {
-
+            if (userId != null && userCheck.get().toString() == "0" ) {
                 var hub = Intent(this, Hub::class.java)
                 startActivity(hub)
                 finish()
-
             } else {
-
                 var intent = Intent(this, Welcome::class.java)
                 startActivity(intent)
                 finish()
@@ -67,6 +57,7 @@ class UpSplash : ChapActivity() {
 
         }
     }
+
 
     class UserCheck(var inp: String = "-1", var context: Context) : AsyncTask<String, String, String>() {
 

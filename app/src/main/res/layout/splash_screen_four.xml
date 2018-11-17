@@ -92,6 +92,7 @@
         android:background="@drawable/box_white"
         android:text="@string/confirm"
         android:textSize="20sp"
+        android:textColor="@color/frBlue"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
         app:layout_constraintStart_toStartOf="@+id/linearLayout3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
@@ -129,33 +130,34 @@
         android:gravity="center_horizontal"
         android:layoutDirection="rtl"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/sp_four_confirm"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_four_confirm">
 
 
         <TextView
-            android:textColor="@color/frRed"
             android:id="@+id/sp_four_until_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="تا " />
+            android:text="تا "
+            android:textColor="@color/mkWhite" />
 
         <TextView
-            android:textColor="@color/frRed"
             android:id="@+id/sp_four_codeTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="05:00" />
+            android:text="05:00"
+            android:textColor="@color/mkWhite" />
 
         <TextView
-            android:textColor="@color/frRed"
             android:id="@+id/sp_four_willSend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text=" دیگه کد برات ارسال میشه" />
+            android:text=" دیگه کد برات ارسال میشه"
+            android:textColor="@color/mkWhite" />
     </LinearLayout>
 
     <Button

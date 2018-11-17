@@ -43,19 +43,19 @@ android {
 
         internal_test1 {
             dimension "version"
-            versionCode 378
-            versionName "t3"
+            versionCode 394
+            versionName "t05"
         }
 
         internal_test2 {
             dimension "version"
-            versionCode 379
-            versionName "t3"
+            versionCode 395
+            versionName "t05"
         }
         internal_test3 {
             dimension "version"
-            versionCode 380
-            versionName "t3"
+            versionCode 396
+            versionName "t05"
         }
 
 
@@ -297,6 +297,6 @@ dependencies {
     //noinspection GradleDynamicVersion
 //    implementation 'ir.sls.mono:Monolytics:+'
 
-    implementation 'com.google.firebase:firebase-core:16.0.3'
+//    implementation 'com.google.firebase:firebase-core:16.0.3'
 
 }

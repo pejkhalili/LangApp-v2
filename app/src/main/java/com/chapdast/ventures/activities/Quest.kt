@@ -5,10 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Typeface
-import android.os.Bundle
-import android.os.CountDownTimer
-import android.os.Handler
-import android.os.StrictMode
+import android.os.*
 import android.speech.tts.TextToSpeech
 import android.speech.tts.TextToSpeech.OnInitListener
 import android.support.v7.app.AlertDialog
@@ -20,6 +17,7 @@ import android.view.ViewGroup
 import android.widget.*
 import com.chapdast.ventures.*
 import com.chapdast.ventures.Configs.*
+import com.chapdast.ventures.Handlers.Ana
 
 import kotlinx.android.synthetic.main.activity_quest_new.*
 import kotlinx.android.synthetic.main.new_quest_loader.*
@@ -45,9 +43,8 @@ class Quest : ChapActivity(), OnInitListener {
     var qid = 0
     var temp: Any = ""
     var tts: TextToSpeech? = null
-
     var speaker: Boolean = true
-    var handler = Handler()
+
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
             var result = tts!!.setLanguage(Locale.ENGLISH)
@@ -97,6 +94,8 @@ class Quest : ChapActivity(), OnInitListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         if (ChapActivity.netCheck(this)) {
             setContentView(R.layout.activity_quest_new)
             speaker = SPref(applicationContext, "setting")!!.getBoolean("speaker", true)
@@ -115,9 +114,13 @@ class Quest : ChapActivity(), OnInitListener {
             nq_unknown.typeface = HelloApp.IRANSANS
             nq_time.typeface = HelloApp.BEBAS_FONT
             nq_time.textSize = 35F
-
-            QuestLoader()
-
+//            val inQuestSubAsked = SPref(applicationContext, "iqs")?.getBoolean("asked", false)
+//            val subStat = SPref(applicationContext, "subStat")?.getBoolean("stat", false)
+//            if (inQuestSubAsked == true && subStat == false) {//asked user for sub
+//                InQuestSub()
+//            } else {
+                QuestLoader()
+//            }
             nq_side.setOnClickListener {
                 tim?.cancel()
                 finish()
@@ -179,8 +182,10 @@ class Quest : ChapActivity(), OnInitListener {
                     nq_speak.setOnClickListener {
                         SpeakOut(nq_question.text.toString())
                     }
-                    handler.postDelayed(Runnable {
-                        if (speaker) SpeakOut(nq_question.text.toString())
+                    HelloApp.HANDLER.postDelayed({
+                        if (speaker) {
+                            SpeakOut(nq_question.text.toString())
+                        }
                     }, 200)
 
 
@@ -240,7 +245,7 @@ class Quest : ChapActivity(), OnInitListener {
             }
 
 
-            val rAns:Int = when (trueAns) {
+            val rAns: Int = when (trueAns) {
                 nq_first.text.toString() -> 1
                 nq_sec.text.toString() -> 2
                 nq_third.text.toString() -> 3
@@ -344,12 +349,12 @@ class Quest : ChapActivity(), OnInitListener {
                 var meaningList: ArrayList<WordTransObject?> = ArrayList(res.length())
                 for (i in 0 until res.length()) {
                     var row = res.get(i) as JSONObject
-                    var mean = WordTransObject(row.getString("type"),row.getString("definition"),row.getString("example") )
+                    var mean = WordTransObject(row.getString("type"), row.getString("definition"), row.getString("example"))
 //                    Log.e("rmean", mean.toString())
-                    meaningList.add(i,mean)
+                    meaningList.add(i, mean)
                 }
 
-                Log.e("rmean", wordToCheck +"\n"+ res.toString() +"\n"+meaningList.toString())
+                Log.e("rmean", wordToCheck + "\n" + res.toString() + "\n" + meaningList.toString())
                 var adapter = listObjAdapter(applicationContext, meaningList)
 
                 moreList.adapter = adapter
@@ -452,7 +457,7 @@ class Quest : ChapActivity(), OnInitListener {
     }
 
     fun SetAnswer(Answer: Boolean = true) {
-
+        var set = true
         if (Answer) {
             rightAnswers++
             SPref(applicationContext, "quest_stat")!!.edit().putInt("RIGHT_ANS", rightAnswers).apply()
@@ -460,8 +465,24 @@ class Quest : ChapActivity(), OnInitListener {
             wrongAnswers++
             SPref(applicationContext, "quest_stat")!!.edit().putInt("WRONG_ANS", wrongAnswers).apply()
         }
+
         var con = isNetworkAvailable(this)
         if (con) {
+            /*
+            if ((rightAnswers + wrongAnswers) > 0 && (rightAnswers + wrongAnswers) % 3 == 0) {
+
+                val userId = SPref(this, "userCreds")?.getString("userId", null)
+
+                var subStat: Boolean = SPref(applicationContext, "subStat")!!.getBoolean("stat", false)
+                var userCheck = UserCheck(userId.toString(), this).execute().get()
+                if (!userCheck || !subStat) {
+                    set=false
+                    InQuestSub()
+                }
+
+            }
+            if (set) {
+            */
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
             StrictMode.setThreadPolicy(policy)
             var userId = SPref(applicationContext, "userCreds")!!.getString("userId", 0.toString())
@@ -477,7 +498,6 @@ class Quest : ChapActivity(), OnInitListener {
                     try {
                         var jes = setAnswer.jsonObject
                         if (jes.getBoolean("result")) {
-
                             QuestLoader()
                         } else {
                             sToast(applicationContext, "SENT $userId $qid")
@@ -490,6 +510,9 @@ class Quest : ChapActivity(), OnInitListener {
 
                 }
             }
+//            }else{
+//                TimeControl()
+//            }
         } else {
             var noCon = Intent(this, NoConnection::class.java)
             startActivity(noCon)
@@ -498,6 +521,42 @@ class Quest : ChapActivity(), OnInitListener {
 
     }
 
+    /*
+        fun InQuestSub() {
+
+            val iqs = AlertDialog.Builder(this).create()
+            val dialogView = layoutInflater.inflate(R.layout.quest_continue, null)
+            val label = dialogView.findViewById<TextView>(R.id.qc_lable)
+            val qCont = dialogView.findViewById<Button>(R.id.qc_continue)
+            val qExit = dialogView.findViewById<Button>(R.id.qc_exit)
+
+            label.typeface = HelloApp.IRANSANS
+            qCont.typeface = HelloApp.IRANSANS
+            qExit.typeface = HelloApp.IRANSANS
+
+            qCont.setOnClickListener {
+                // launch sub action
+                var ana = Ana(applicationContext)
+                ana.InAppSubRequest(SPref(applicationContext,"userCreds")!!.getString("userId",null))
+                var sub = Intent(this, SplashPage::class.java)
+                iqs.dismiss()
+                startActivity(sub)
+                finish()
+            }
+
+            qExit.setOnClickListener {
+                // limit user so then Quest only Avaliable through subscribtion
+
+                iqs.dismiss()
+                finish()
+            }
+
+            iqs.setView(dialogView)
+            SPref(applicationContext, "iqs")!!.edit().putBoolean("asked", true).commit()
+            iqs.show()
+
+        }
+    */
     inner class WordTransObject(type: String, meaning: String, eg: String) {
         var T = type
         var D = meaning
@@ -516,15 +575,15 @@ class Quest : ChapActivity(), OnInitListener {
             val type = listLay.findViewById<TextView>(R.id.trlist_type)
             val mean = listLay.findViewById<TextView>(R.id.trlist_mean)
             val eg = listLay.findViewById<TextView>(R.id.trlist_eg)
-                try {
-                    var item = dataSource.get(p0)
-                    mean.text = android.text.Html.fromHtml("<em>Def: </em>" + item!!.D)
-                    eg.text = android.text.Html.fromHtml("<em>eg.: " + item.E+"</em>")
-                    type.text = android.text.Html.fromHtml( item.T)
-                }catch(e:Exception){
-                    Log.e("LIST",e.message)
-                }
-                return listLay
+            try {
+                var item = dataSource.get(p0)
+                mean.text = android.text.Html.fromHtml("<em>Def: </em>" + item!!.D)
+                eg.text = android.text.Html.fromHtml("<em>eg.: " + item.E + "</em>")
+                type.text = android.text.Html.fromHtml(item.T)
+            } catch (e: Exception) {
+                Log.e("LIST", e.message)
+            }
+            return listLay
         }
 
         override fun getItem(p0: Int): WordTransObject? {
@@ -540,4 +599,35 @@ class Quest : ChapActivity(), OnInitListener {
         }
 
     }
+
+    class UserCheck(var inp: String = "-1", var context: Context) : AsyncTask<String, Boolean, Boolean>() {
+        override fun doInBackground(vararg input: String?): Boolean {
+
+            var checkUser = khttp.post(SERVER_ADDRESS, data = mapOf("m" to "checkUser", "phone" to inp))
+            if (checkUser.statusCode == 200) {
+                return try {
+                    val jes = checkUser.jsonObject
+                    Log.d("uchx", jes.toString())
+                    if (jes.getBoolean("result") && jes.getString("status").equals("sub")) {
+                        SPref(context, "subStat")!!.edit().putBoolean("stat", true).commit()
+                        true
+                    } else {
+                        SPref(context, "subStat")!!.edit().putBoolean("stat", false).commit()
+                        false
+                    }
+
+                } catch (e: Exception) {
+                    Log.d("Err", e.message)
+                    SPref(context, "subStat")!!.edit().putBoolean("stat", false).commit()
+                    false
+                }
+            } else {
+                val intent = Intent(context, NoConnection::class.java)
+                context.startActivity(intent)
+            }
+            return false
+        }
+
+    }
+
 }

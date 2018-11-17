@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="15dp"
+    android:background="@drawable/dialogs_back">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="233dp"
+        android:src="@mipmap/nsplash_0" />
+    <TextView
+        android:id="@+id/qc_lable"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="برای ادامه آزمون روی دکمه ادامه بزن"
+        android:textSize="17sp"
+        android:layout_marginBottom="15dp"/>
+    <Button
+        android:id="@+id/qc_continue"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="ادامه آزمون"
+        android:background="@drawable/box_white"
+        android:layout_marginBottom="15dp"/>
+    <Button
+        android:id="@+id/qc_exit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/box_red"
+        android:text="خاتمه آزمون"
+        android:textColor="@color/mkWhite"
+        android:textSize="15dp"
+        />
+</LinearLayout>

@@ -46,7 +46,22 @@ class Profile : ChapActivity() {
             uInfoName.text = userName
             uInfoUsername.text = userId
             uInfoUnsub.setOnClickListener {
-                UnSub()
+//                val subStat = SPref(applicationContext,"subStat")!!.getBoolean("stat",false)
+//                if(!subStat){
+//                    sToast(applicationContext,"شما عصو سرویس هلوگرام نیستید",true)
+//
+//                    SPref(applicationContext, "userCreds")!!.edit().clear().apply()
+//                    SPref(applicationContext, "level")!!.edit().clear().apply()
+//                    SPref(applicationContext, "purchase")!!.edit().clear().apply()
+//                    SPref(applicationContext, "userProfileCreds")!!.edit().clear().apply()
+//                    SPref(applicationContext, "ana")!!.edit().clear().apply()
+//
+//                    val splash = Intent(this,UpSplash::class.java)
+//                    startActivity(splash)
+//                    finish()
+//                }else {
+                    UnSub()
+//                }
             }
             uInfoBackBtn.setOnClickListener {
                 finish()

@@ -11,11 +11,11 @@
     >
 
     <ImageView
-        android:layout_marginTop="15dp"
+
         android:id="@+id/imageView10"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:src="@mipmap/slide2"
+        android:layout_height="480dp"
+        android:src="@mipmap/nsplash_1"
         />
 
 

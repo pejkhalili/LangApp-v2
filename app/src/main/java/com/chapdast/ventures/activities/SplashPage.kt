@@ -76,7 +76,7 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
             sp_three_num_box.typeface = HelloApp.IRANSANS
             sp_three_num_box.setSelection(2)
             sp_three_price.typeface = HelloApp.IRANSANS
-            newText.typeface = HelloApp.IRANSANS
+
 
             sp_four_confirm_box.typeface = HelloApp.IRANSANS
             sp_four_until_text.typeface = HelloApp.IRANSANS
@@ -134,9 +134,16 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
             adv.setOnClickListener { intenter(applicationContext, 3) }
             fof.setOnClickListener { intenter(applicationContext, 4) }
             oneOone.setOnClickListener { intenter(applicationContext, 5) }
+//            val userID = SPref(applicationContext, "userCreds")?.getString("userId", null)
+//            val exp = SPref(applicationContext, "subStat")?.getBoolean("stat", false)
+//
+//            if (exp != true && userID != null) {
+//                SignUp()
+//            }
         }
     }
 
+    @SuppressLint("CommitPrefEdits")
     override fun onClick(item: View?) {
 
         if (item != null) {
@@ -144,6 +151,11 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
 
                 R.id.sp_three_confirm -> {
                     //check Phone Number
+                    var id = SPref(applicationContext, "userCreds")?.getString("userId", null)
+                    if (id != null) {
+                        SPref(applicationContext, "userCreds")?.edit()?.clear()?.commit()
+                        SPref(applicationContext, "userCreds")?.edit()?.putBoolean("expired", true)?.commit()
+                    }
                     SignUp()
                     try {
                         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -160,7 +172,7 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
 
                 R.id.sp_four_change_number -> {
                     codeTimer.cancel()
-
+                    SPref(applicationContext, "userCreds")!!.edit()!!.putBoolean("expired", true)!!.commit()
                     setConfirmNumberKey()
                     sp3.visibility = View.VISIBLE
                     sp4.visibility = View.GONE
@@ -262,6 +274,7 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
                         if (jes.getBoolean("result")) {
                             //send to responseble service provider
                             SPref(applicationContext, "userCreds")!!.edit().putString("userId", userId).apply() // set userid to old userId field
+                            SPref(applicationContext,"subStat")!!.edit().putBoolean("stat",true).apply() // sub stat to true
                             Log.i("SET_ID", "USER SET $userId")
                             sp3.visibility = View.GONE
                             sp5.visibility = View.VISIBLE
@@ -319,84 +332,99 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
 
     @SuppressLint("ApplySharedPref")
     fun SignUp() {
-        var phoneNum = sp_three_num_box.text.toString()
-
-        if (phoneNum.length > 10) {
-
-
-            SPref(applicationContext, "userCreds")!!.edit().putString("insertedPhone", phoneNum).apply()
-            //change confirm text to please wait
-//            HelloApp.HANDLER.post {
-//                setConfirmNumberKey(false)
-//                HelloApp.HANDLER.postDelayed({
-//                    setConfirmNumberKey()
-//                }, 120000) //wait 120 sec before next request
-//            }
-            var getUserStatus = CheckUserStatus().execute(phoneNum)
-            var jes = getUserStatus.get()
-            if (jes.getBoolean("result")) {
-                if (jes.getString("status") == "sub") {
-                    var ANA = Ana(applicationContext)
-                    ANA.reLog(phoneNum)
-                }
-// Irancell Peyment
-                if (CheckPhoneNumber(phoneNum, 0)) {
-                    var checkVpnConnection = CheckVpnConnection().execute()
-                    var vpn = checkVpnConnection.get()
-                    if (vpn) {
-                        SPref(applicationContext, "Temp")!!.edit().putString("userId", phoneNum).commit()
-                        var ANA = Ana(applicationContext)
-                        ANA.requestCode(phoneNum)
-                        AccountUtil.removeAccount()
-                        var fillNumber = Intent()
-                        fillNumber.putExtra("msisdn", phoneNum)
-                        fillNumber.putExtra("editAble", false)
-                        fillNumber.putExtra("autoRenewing", true)
-                        mHelper.setFillInIntent(fillNumber)
-                        launchPay()
-                    }
-                    // Vpn On
-                    else {
-                        sToast(applicationContext, getString(R.string.turnOffVpn), false)
-                    }
-
-                }
-// MCI PEYMENT
-                else if (CheckPhoneNumber(phoneNum, 1)) {
-                    codeTimer = CountDowner(sp_four_codeTimer, TIME_FOR_NEW_CODE, false)
-                    var sendMessage = SendSubRequest().execute(phoneNum)
-
-                    var jes = sendMessage.get()
-
-                    Log.i("ERR_SMS", "RSP:" + jes.toString())
-                    if (jes.getBoolean("result") && jes.getBoolean("status")) {
-                        var ANA = Ana(applicationContext)
-                        ANA.requestCode(phoneNum)
-                        SPref(applicationContext, "Temp")!!.edit().putString("userId", phoneNum).commit()
-                        SPref(applicationContext, "userCreds")!!.edit().putString("activeCode", jes.getString("tid")).apply()
-                    } else {
-                        Log.d("ERR_SMS", "3cant Send")
-                        sToast(applicationContext, getString(R.string.pleaseTryAgain), true)
-                        var ANA = Ana(applicationContext)
-                        ANA.mciFail(phoneNum)
-                    }
-                }
-// Not Supported Number
-                else {
-                    var ANA = Ana(applicationContext)
-                    ANA.NotSupported(phoneNum)
-                    sToast(applicationContext, resources.getString(R.string.unSupportedNumber), false)
-                    setConfirmNumberKey()
-                }
+//        val expired = SPref(applicationContext, "userCreds")?.getBoolean("expired", false)
+//        val trialUser = SPref(applicationContext, "userCreds")?.getString("userId", null)
+//        lateinit var phoneNum: String
+/*
+        if (trialUser == null && expired != true) {
+            phoneNum = sp_three_num_box.text.toString()
+            if (phoneNum.length > 10) {
+                SPref(applicationContext, "userCreds")?.edit()?.putString("userId", phoneNum)?.apply()
+                intenter(applicationContext, 0, true)
+            } else {
+                var ANA = Ana(applicationContext)
+                ANA.wrongNumber(phoneNum)
+                sToast(this, applicationContext.resources.getString(R.string.wrongNum))
+                setConfirmNumberKey()
             }
-        }
-// Wrong Number
-        else {
-            var ANA = Ana(applicationContext)
-            ANA.wrongNumber(phoneNum)
-            sToast(this, applicationContext.resources.getString(R.string.wrongNum))
-            setConfirmNumberKey()
-        }
+        } else {
+            if(expired == true){
+                phoneNum = sp_three_num_box.text.toString()
+            }else{
+                phoneNum = "" + trialUser
+            }
+            */
+        val phoneNum = sp_three_num_box.text.toString();
+            if (phoneNum.length > 10) {
+                SPref(applicationContext, "userCreds")!!.edit().putString("insertedPhone", phoneNum).apply()
+                var getUserStatus = CheckUserStatus().execute(phoneNum)
+                var jes = getUserStatus.get()
+                if (jes.getBoolean("result")) {
+                    if (jes.getString("status") == "sub") {
+                        var ANA = Ana(applicationContext)
+                        ANA.reLog(phoneNum)
+                    }
+// Irancell Peyment
+                    if (CheckPhoneNumber(phoneNum, 0)) {
+                        var checkVpnConnection = CheckVpnConnection().execute()
+                        var vpn = checkVpnConnection.get()
+                        if (vpn) {
+                            HelloApp.HANDLER.postDelayed({
+                                SPref(applicationContext, "Temp")!!.edit().putString("userId", phoneNum).commit()
+                                var ANA = Ana(applicationContext)
+                                ANA.requestCode(phoneNum)
+                                AccountUtil.removeAccount()
+                                var fillNumber = Intent()
+                                fillNumber.putExtra("msisdn", phoneNum)
+                                fillNumber.putExtra("editAble", false)
+                                fillNumber.putExtra("autoRenewing", true)
+                                mHelper.setFillInIntent(fillNumber)
+                                launchPay()
+                            }, 10)
+                        }
+                        // Vpn On
+                        else {
+                            sToast(applicationContext, getString(R.string.turnOffVpn), false)
+                        }
+
+                    }
+// MCI PEYMENT
+                    else if (CheckPhoneNumber(phoneNum, 1)) {
+                        codeTimer = CountDowner(sp_four_codeTimer, TIME_FOR_NEW_CODE, false)
+                        var sendMessage = SendSubRequest().execute(phoneNum)
+
+                        var jes = sendMessage.get()
+
+                        Log.i("ERR_SMS", "RSP:" + jes.toString())
+                        if (jes.getBoolean("result") && jes.getBoolean("status")) {
+                            var ANA = Ana(applicationContext)
+                            ANA.requestCode(phoneNum)
+                            SPref(applicationContext, "Temp")!!.edit().putString("userId", phoneNum).commit()
+                            SPref(applicationContext, "userCreds")!!.edit().putString("activeCode", jes.getString("tid")).apply()
+                        } else {
+                            Log.d("ERR_SMS", "3cant Send")
+                            sToast(applicationContext, getString(R.string.pleaseTryAgain), true)
+                            var ANA = Ana(applicationContext)
+                            ANA.mciFail(phoneNum)
+                        }
+                    }
+// Not Supported Number
+                    else {
+                        var ANA = Ana(applicationContext)
+                        ANA.NotSupported(phoneNum)
+                        sToast(applicationContext, resources.getString(R.string.unSupportedNumber), false)
+                        SPref(applicationContext, "userCreds")?.edit()?.clear()?.commit()
+                        setConfirmNumberKey()
+                    }
+                }
+            }else {
+                var ANA = Ana(applicationContext)
+                ANA.wrongNumber(phoneNum)
+                sToast(this, applicationContext.resources.getString(R.string.wrongNum))
+                setConfirmNumberKey()
+            }
+//        }
+
     }
 
     fun SignUpConfirm() {
@@ -415,9 +443,11 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
             if (jes.getBoolean("result")) {
                 SPref(applicationContext, "userCreds")!!.edit().putString("userId", UserId).apply() // set userid to old userId field
                 intenter(applicationContext, 0, false)
+                SPref(applicationContext,"userCreds")?.edit()?.putBoolean("expired",false)?.commit()
                 //send to responseble service provider
                 sp4.visibility = View.GONE
                 sp5.visibility = View.VISIBLE
+                SPref(applicationContext,"subStat")!!.edit()!!.putBoolean("stat",true)!!.apply()
                 //send Request To register
                 //Load next Page
             } else if (!jes.getBoolean("result")) {
@@ -448,6 +478,7 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
             val setLevel = SetUserLevel().execute(*arrayOf(userId, strLevel))
             val res: JSONObject = setLevel.get()
             if (res.getBoolean("result") && loadHub) {
+
                 val intent = Intent(context, Hub::class.java)
                 finish()
                 startActivity(intent)
@@ -534,6 +565,7 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
     }
 
     inner class SendSubRequest : AsyncTask<String, String, JSONObject>() {
+
         override fun onPreExecute() {
             super.onPreExecute()
             HelloApp.HANDLER.post {
@@ -551,7 +583,7 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
 
                     Log.e("SSR", "SUBREQUEST " + sp_three_num_box.text.toString())
                     codeTimer = CountDowner(sp_four_codeTimer, TIME_FOR_NEW_CODE, false)
-                    SendSubRequest().execute(sp_three_num_box.text.toString())
+                    SendSubRequest().execute(SPref(applicationContext,"userCreds")!!.getString("userId",""))
 
                     sp_four_timerHolder.visibility = View.VISIBLE
 
@@ -575,6 +607,7 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
 
         override fun doInBackground(vararg params: String?): JSONObject {
             val phoneNum = params[0]
+
             var req = khttp.post(SERVER_ADDRESS, data = mapOf("m" to "sendsms", "phone" to phoneNum))
             if (req.statusCode == 200) {
                 return req.jsonObject

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.Welcome"
-    android:background="@mipmap/slide_back">
+    android:background="@mipmap/nsplash_back">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/wlc_viewpager"
@@ -85,7 +85,7 @@
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:text="@string/startApp"
-        android:textColor="@color/mkWhite"
+        android:textColor="@color/fr_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -103,7 +103,7 @@
         android:paddingEnd="10dp"
         android:text="@string/wlc_start"
         android:visibility="visible"
-        android:textColor="@color/mkWhite"
+        android:textColor="@color/fr_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"

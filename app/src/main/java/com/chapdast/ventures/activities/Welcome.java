@@ -80,7 +80,7 @@ public class Welcome extends ChapActivity {
         layouts = new int[]{
                 R.layout.w_slide1,
                 R.layout.w_slide2,
-                R.layout.w_slide4,
+//                R.layout.w_slide4,
                 R.layout.w_slide3,
                 R.layout.w_slide5
         };
@@ -173,7 +173,7 @@ public class Welcome extends ChapActivity {
                 start.setVisibility(View.GONE);
                 startApp.setVisibility(View.INVISIBLE);
                 if (position == 0) {
-                    startApp.setVisibility(View.VISIBLE);
+                    startApp.setVisibility(View.INVISIBLE);
                     start.setVisibility(View.VISIBLE);
                     btnNext.setVisibility(View.INVISIBLE);
                     btnSkip.setVisibility(View.INVISIBLE);

@@ -1,121 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center|top"
     >
 
-    <ScrollView
-        android:id="@+id/sp_three_scroll"
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="260dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_weight="0"
+        android:src="@mipmap/sp_three"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sp_three_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        >
+        android:layout_alignStart="@+id/imageView6"
+        android:layout_alignEnd="@+id/imageView6"
+        android:layout_alignBottom="@id/imageView6"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/please_enter_your_number"
+        android:textAlignment="center"
+        android:textColor="@color/mkWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="306dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_weight="0"
-                android:src="@mipmap/sp_three"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/sp_three_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/imageView6"
-                android:layout_alignEnd="@+id/imageView6"
-                android:layout_alignBottom="@id/imageView6"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="260dp"
-                android:layout_marginEnd="8dp"
-                android:text="@string/please_enter_your_number"
-                android:textAlignment="center"
-                android:textColor="@color/mkWhite"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView6" />
-
-            <EditText
-                android:id="@+id/sp_three_num_box"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@+id/sp_three_text"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:background="@drawable/box_white"
-                android:inputType="number"
-                android:maxLength="11"
-                android:maxLines="1"
-                android:text="09"
-                android:textAlignment="center"
-                android:textColor="@color/frBlue"
-                android:textColorHint="@color/frBlue"
-                android:textCursorDrawable="@null"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sp_three_text" />
-
-            <TextView
-                android:id="@+id/newText"
-                android:layout_width="wrap_content"
-                android:layout_height="44dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="شماره خود را بدین صورت ۰۹۱۲۵۱۷XX۱۴ وارد کنید\nبعد از وارد کردن شماره دکمه ارسال شماره را بزنید"
-                android:textAlignment="center"
-                android:textColor="@color/frRed"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sp_three_num_box" />
-
-        </android.support.constraint.ConstraintLayout>
-    </ScrollView>
-
+    <EditText
+        android:id="@+id/sp_three_num_box"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/sp_three_text"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/box_white"
+        android:inputType="number"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:text="09"
+        android:textAlignment="center"
+        android:textColor="@color/frBlue"
+        android:textColorHint="@color/frBlue"
+        android:textCursorDrawable="@null"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_three_text" />
 
     <Button
         android:id="@+id/sp_three_confirm"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="15dp"
         android:background="@drawable/box_white"
-        android:text="@string/sendNumber"
+        android:text="@string/confirm"
         android:textColor="@color/frBlue"
         android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_three_num_box" />
 
     <TextView
         android:id="@+id/sp_three_price"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="33dp"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/sp_three_price"
         android:textAlignment="center"
         android:textColor="@color/frRed"
-        android:textSize="13sp" />
-</LinearLayout>
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@+id/sp_three_confirm"
+        tools:layout_editor_absoluteX="0dp" />
+</android.support.constraint.ConstraintLayout>

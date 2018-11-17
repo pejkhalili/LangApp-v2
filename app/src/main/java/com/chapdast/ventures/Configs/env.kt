@@ -1,10 +1,11 @@
 package com.chapdast.ventures.Configs
 
-import com.google.firebase.analytics.FirebaseAnalytics
+//import com.google.firebase.analytics.FirebaseAnalytics
 
 /**
  * Created by pejman on 5/25/18.
  */
+
 //Auto SMS READ
 const val AUTO_READ = true
 
@@ -56,4 +57,4 @@ const val CAT_STRG_REQUEST_CODE = 8601
 const val SMS_REC_CODE = 9880
 const val IMEI_CODE = 9881
 
-var FIREBASE_CLI :FirebaseAnalytics?=null
+//var FIREBASE_CLI :FirebaseAnalytics?=null

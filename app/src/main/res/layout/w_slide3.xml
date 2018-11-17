@@ -11,12 +11,13 @@
     >
 
     <ImageView
-        android:layout_marginTop="15dp"
         android:id="@+id/imageView10"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:src="@mipmap/slide3"
-         />
+        android:layout_height="500dp"
+        android:src="@mipmap/nsplash_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </LinearLayout>
