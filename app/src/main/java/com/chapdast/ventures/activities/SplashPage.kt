@@ -151,18 +151,13 @@ open class SplashPage : ChapActivity(), View.OnClickListener {
 
                 R.id.sp_three_confirm -> {
                     //check Phone Number
-                    var id = SPref(applicationContext, "userCreds")?.getString("userId", null)
-                    if (id != null) {
-                        SPref(applicationContext, "userCreds")?.edit()?.clear()?.commit()
-                        SPref(applicationContext, "userCreds")?.edit()?.putBoolean("expired", true)?.commit()
-                    }
+//                    var id = SPref(applicationContext, "userCreds")?.getString("userId", null)
+//                    if (id != null) {
+//                        SPref(applicationContext, "userCreds")?.edit()?.clear()?.commit()
+//                        SPref(applicationContext, "userCreds")?.edit()?.putBoolean("expired", true)?.commit()
+//                    }
                     SignUp()
-                    try {
-                        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                        imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-                    } catch (e: Exception) {
 
-                    }
                 }
 
                 R.id.sp_four_confirm -> {
